@@ -1,5 +1,6 @@
 package ajbc.exam;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -18,8 +19,11 @@ public class Runner {
 		objects[2] = new Dragon("dracarius", LocalDate.of(2002,10,5),2);
 		objects[3] = new Dragon("drago", LocalDate.of(1996,7,5),8);
 		
-		ObjectsReaderWriter.writeRandomObjectToFile(objects);
-		ObjectsReaderWriter.writeRandomObjectToFile(objects);
+//		ObjectsReaderWriter.writeRandomObjectToFile(objects);
+//		ObjectsReaderWriter.writeRandomObjectToFile(objects);
+		FileOutputStream fileOutput = new FileOutputStream("examFiles/objectsData.dat");
+		ObjectsReaderWriter.writeRandomObject(objects,fileOutput);
+		ObjectsReaderWriter.writeRandomObject(objects,fileOutput);
 		ObjectsReaderWriter.readObjectsFromFile();
 		
 

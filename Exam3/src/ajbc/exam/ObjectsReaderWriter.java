@@ -35,6 +35,18 @@ public static void writeRandomObjectToFile(Object [] objects) throws IOException
 		}
 	}
 	
+public static void writeRandomObject(Object [] objects,FileOutputStream fileOutput) throws IOException {
+		
+		int randomIndex = (int)(Math.random()*4);
+		
+		try (ObjectOutputStream objOutput = new ObjectOutputStream(fileOutput)) {
+
+			objOutput.writeObject(objects[randomIndex]);
+			System.out.println(objects[randomIndex]);
+		}
+	}
+	
+
 	
 
 }

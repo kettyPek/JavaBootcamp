@@ -2,6 +2,8 @@ package ajbc.exam;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
+
 import org.junit.jupiter.api.Test;
 
 import ajbc.exam.Food.Macronutrients;
@@ -22,6 +24,13 @@ class FoodTest {
 	@Test
 	void testNonCaptalizedException() {
 		assertThrows(NonCapatilizedException.class,()-> food.setName("cookie"));
+		
+	}
+	
+	@Test
+	void testSetName() throws NonCapatilizedException {
+		food.setName("Pizza");
+		assertEquals("Pizza", food.name);
 	}
 	
 	

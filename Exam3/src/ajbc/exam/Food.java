@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Food implements Serializable{
 	
-	private String name;
+	protected String name;
 	private Taste taste;
 	private Macronutrients macronutrientsType;
 	
